@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String
+  password String 
+}
+//link
+//https://railway.app/project/02a2d92b-7aec-49ee-8dcb-d54a97439e1c/plugin/fb3bcdae-975a-4b39-bdd9-af3960991d00/data?state=table&table=User
